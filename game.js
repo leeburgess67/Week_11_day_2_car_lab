@@ -12,4 +12,5 @@ Game.prototype.deal = function () {
   this.players[1].cards.push(this.deck[5]);
 };
 
+
 module.exports = Game;

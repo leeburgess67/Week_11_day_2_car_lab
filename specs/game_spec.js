@@ -41,5 +41,12 @@ describe('game', function (){
     game.deal();
     const result = game.players[0].cards.length;
     assert.strictEqual(result, 3);
-  })
+  });
+
+  it('can have an attribute chosen', function(){
+    game.deal();
+    const result = game.players[0].choose('strength');
+    assert.strictEqual(result, 9);
+  });
+
 });
