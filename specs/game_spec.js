@@ -45,8 +45,15 @@ describe('game', function (){
 
   it('can have an attribute chosen', function(){
     game.deal();
-    const result = game.players[0].choose('strength');
+    const result = player1.choose('strength');
     assert.strictEqual(result, 9);
   });
+
+  it('can compare 2 players hands', function(){
+    game.deal();
+    game.decideWinner();
+    const result = player1.cards.length;
+    assert.strictEqual(result, 4)
+  })
 
 });
