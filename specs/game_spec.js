@@ -24,7 +24,7 @@ describe('game', function (){
     card4 = new Card('The Flash',  7, 4, 10);
     card5 = new Card('Wonder Woman',  8, 7, 5);
     card6 = new Card('Batman',  10,  5, 6);
-    game = new Game([player1, player2])
+    game = new Game([player1, player2], [card1, card2, card3, card4, card5, card6])
   })
 
   it('should have 2 players', function(){
@@ -32,4 +32,14 @@ describe('game', function (){
     assert.strictEqual(result, 2);
   });
 
+  it('should have 6 cards', function(){
+    const result = game.deck.length;
+    assert.strictEqual(result, 6);
+  });
+
+  it('should deal cards to both players', function(){
+    game.deal();
+    const result = game.players[0].cards.length;
+    assert.strictEqual(result, 3);
+  })
 });
