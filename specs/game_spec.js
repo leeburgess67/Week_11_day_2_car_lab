@@ -43,12 +43,11 @@ describe('game', function (){
     assert.strictEqual(result, 3);
   });
 
-
-
    it("can play a game", function(){
     game.playGame(player1, "strength", player2);
     const result = player1.cards.length;
     assert.strictEqual(result, 4);
    });
+
 
  });
