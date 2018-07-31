@@ -3,7 +3,12 @@ const Card = require('../card.js');
 
 describe('card', function (){
 
-  let card;
+  let card1;
+  let card2;
+  let card3;
+  let card4;
+  let card5;
+  let card6;
 
   beforeEach(function(){
     card1 = new Card('superman', 6, 9, 7);
