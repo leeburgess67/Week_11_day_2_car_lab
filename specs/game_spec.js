@@ -22,10 +22,10 @@ describe('game', function (){
     card2 = new Card('scarlet witch', 7, 10, 5);
     card3 = new Card('black widow', 8, 6, 9);
     card4 = new Card('The Flash',  7, 4, 10);
-    card5 = new Card('Wonder Woman',  8, 7, 5);
+    card5 = new Card('Wonder Woman',8, 7, 5);
     card6 = new Card('Batman',  10,  5, 6);
-    game = new Game([player1, player2], [card1, card2, card3, card4, card5, card6])
-  })
+    game = new Game([player1, player2], [card1, card2, card3, card4, card5, card6]);
+  });
 
   it('should have 2 players', function(){
     const result = game.players.length;
@@ -43,17 +43,12 @@ describe('game', function (){
     assert.strictEqual(result, 3);
   });
 
-  it('can have an attribute chosen', function(){
-    game.deal();
-    const result = player1.choose('strength');
-    assert.strictEqual(result, 9);
-  });
 
-  it('can compare 2 players hands', function(){
-    game.deal();
-    game.decideWinner();
+
+   it("can play a game", function(){
+    game.playGame(player1, "strength", player2);
     const result = player1.cards.length;
-    assert.strictEqual(result, 4)
-  })
+    assert.strictEqual(result, 4);
+   });
 
-});
+ });
